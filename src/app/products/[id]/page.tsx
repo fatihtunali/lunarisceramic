@@ -63,13 +63,13 @@ export default function ProductDetailPage() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Images */}
             <div>
-              <div className="relative aspect-square rounded-lg overflow-hidden bg-white mb-4">
+              <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-white mb-4">
                 {selectedImage ? (
                   <Image
                     src={selectedImage}
                     alt={product.name_en}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full text-stone-400">
