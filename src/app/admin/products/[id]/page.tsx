@@ -10,6 +10,7 @@ export default function EditProductPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const [formData, setFormData] = useState({
     name_en: '',
@@ -58,6 +59,35 @@ export default function EditProductPage() {
     const url = prompt('Enter image URL');
     if (url) {
       setFormData({ ...formData, images: [...formData.images, url] });
+    }
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    try {
+      const formDataUpload = new FormData();
+      formDataUpload.append('file', file);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formDataUpload
+      });
+
+      if (response.ok) {
+        const { url } = await response.json();
+        setFormData({ ...formData, images: [...formData.images, url] });
+      } else {
+        const error = await response.json();
+        alert(error.error || 'Upload failed');
+      }
+    } catch {
+      alert('Upload failed');
+    } finally {
+      setUploading(false);
+      e.target.value = '';
     }
   };
 
@@ -253,13 +283,25 @@ export default function EditProductPage() {
                 </div>
               ))}
             </div>
-            <button
-              type="button"
-              onClick={handleImageAdd}
-              className="mt-2 px-4 py-2 border border-stone-200 rounded text-stone-600 hover:bg-stone-50 font-inter text-sm"
-            >
-              + Add Image URL
-            </button>
+            <div className="mt-2 flex gap-2">
+              <button
+                type="button"
+                onClick={handleImageAdd}
+                className="px-4 py-2 border border-stone-200 rounded text-stone-600 hover:bg-stone-50 font-inter text-sm"
+              >
+                + Add Image URL
+              </button>
+              <label className="px-4 py-2 bg-amber-600 text-white rounded hover:bg-amber-700 font-inter text-sm cursor-pointer">
+                {uploading ? 'Uploading...' : 'Upload from Computer'}
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={handleFileUpload}
+                  disabled={uploading}
+                  className="hidden"
+                />
+              </label>
+            </div>
           </div>
         </div>
 
