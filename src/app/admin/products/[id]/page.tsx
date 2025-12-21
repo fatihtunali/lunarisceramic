@@ -130,7 +130,7 @@ export default function EditProductPage() {
                 value={formData.name_en}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
               />
             </div>
             <div>
@@ -142,7 +142,7 @@ export default function EditProductPage() {
                 name="name_tr"
                 value={formData.name_tr}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
               />
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function EditProductPage() {
               value={formData.description_en}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
             />
           </div>
 
@@ -169,7 +169,7 @@ export default function EditProductPage() {
               value={formData.description_tr}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
             />
           </div>
 
@@ -183,7 +183,7 @@ export default function EditProductPage() {
                 value={formData.category_id}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
               >
                 <option value="">Select category</option>
                 {categories.map(cat => (
@@ -205,7 +205,7 @@ export default function EditProductPage() {
                 required
                 step="0.01"
                 min="0"
-                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
               />
             </div>
           </div>
