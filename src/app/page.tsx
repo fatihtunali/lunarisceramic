@@ -10,18 +10,18 @@ import { Product, Category } from '@/types';
 
 // Category images mapping
 const categoryImages: { [key: string]: string } = {
-  'cups': '/images/cups/C1 (1).webp',
-  'wine-glass': '/images/wine glass/w1.webp',
-  'wine-server': '/images/wine server/11.webp',
-  'gramophone': '/images/Gramophone/Gramophone.webp'
+  'cups': '/images/cups/CAT.webp',
+  'wine-glasses': '/images/wine-glass/w1.webp',
+  'wine-servers': '/images/wine-server/11.webp',
+  'decorative': '/images/gramophone/Gramophone.webp'
 };
 
 // Category gradient colors
 const categoryGradients: { [key: string]: string } = {
   'cups': 'from-rose-500/80 to-rose-600/80',
-  'wine-glass': 'from-violet-500/80 to-violet-600/80',
-  'wine-server': 'from-teal-500/80 to-teal-600/80',
-  'gramophone': 'from-amber-500/80 to-amber-600/80'
+  'wine-glasses': 'from-violet-500/80 to-violet-600/80',
+  'wine-servers': 'from-teal-500/80 to-teal-600/80',
+  'decorative': 'from-amber-500/80 to-amber-600/80'
 };
 
 export default function HomePage() {
@@ -89,7 +89,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-200/50 via-violet-200/50 to-teal-200/50 rounded-3xl transform rotate-3" />
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-3xl shadow-pastel-lg" />
                 <Image
-                  src="/images/wine server/11.webp"
+                  src="/images/wine-server/11.webp"
                   alt="Ceramic Wine Server - Handcrafted Art"
                   fill
                   className="object-contain drop-shadow-2xl p-8"
