@@ -13,7 +13,7 @@ const categoryImages: { [key: string]: string } = {
   'cups': '/images/cups/CAT.webp',
   'wine-glasses': '/images/wine-glass/w1.webp',
   'wine-servers': '/images/wine-server/11.webp',
-  'decorative': '/images/gramophone/Gramophone.webp'
+  'decorative': '/images/Gramophone/Gramophone.webp'
 };
 
 // Category gradient colors
