@@ -44,16 +44,16 @@ async function updateDatabase(rates) {
   const connection = await mysql.createConnection(dbConfig);
 
   try {
-    // Update USD rate (TRY to USD means 1 TRY = 1/rate USD)
+    // Update USD rate (rate = how many USD per 1 TRY)
     await connection.execute(
-      'UPDATE exchange_rates SET rate = ?, updated_at = NOW() WHERE from_currency = ? AND to_currency = ?',
-      [1 / rates.USD, 'TRY', 'USD']
+      'UPDATE exchange_rates SET rate = ? WHERE currency = ?',
+      [(1 / rates.USD).toFixed(4), 'USD']
     );
 
-    // Update EUR rate
+    // Update EUR rate (rate = how many EUR per 1 TRY)
     await connection.execute(
-      'UPDATE exchange_rates SET rate = ?, updated_at = NOW() WHERE from_currency = ? AND to_currency = ?',
-      [1 / rates.EUR, 'TRY', 'EUR']
+      'UPDATE exchange_rates SET rate = ? WHERE currency = ?',
+      [(1 / rates.EUR).toFixed(4), 'EUR']
     );
 
     console.log(`[${new Date().toISOString()}] Exchange rates updated successfully:`);
