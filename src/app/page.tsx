@@ -45,39 +45,39 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section - Pastel Gradient */}
-      <section className="relative min-h-[85vh] bg-gradient-to-br from-rose-100 via-violet-100 to-teal-100 overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-[85vh] bg-gradient-to-br from-rose-100 via-violet-100 to-teal-100 overflow-hidden">
         {/* Decorative circles */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-rose-300/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-violet-300/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-10 md:top-20 left-5 md:left-10 w-40 md:w-72 h-40 md:h-72 bg-rose-300/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 md:bottom-20 right-5 md:right-10 w-48 md:w-96 h-48 md:h-96 bg-violet-300/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-teal-200/20 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center min-h-[85vh] py-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center min-h-[70vh] md:min-h-[85vh] py-8 md:py-12">
             {/* Left Side - Text */}
-            <div className="order-2 md:order-1">
-              <p className="font-inter text-rose-500 uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                <span className="w-8 h-0.5 bg-rose-400"></span>
+            <div className="order-2 md:order-1 text-center md:text-left">
+              <p className="font-inter text-rose-500 uppercase tracking-widest text-xs md:text-sm mb-3 md:mb-4 flex items-center justify-center md:justify-start gap-2">
+                <span className="w-6 md:w-8 h-0.5 bg-rose-400"></span>
                 Handmade with Love
               </p>
-              <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-6 leading-tight">
+              <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-bold text-stone-800 mb-4 md:mb-6 leading-tight">
                 Artisan Ceramic
                 <span className="block bg-gradient-to-r from-rose-500 via-violet-500 to-teal-500 bg-clip-text text-transparent">
                   Collections
                 </span>
               </h1>
-              <p className="font-inter text-lg text-stone-600 mb-8 max-w-lg">
-                Discover unique handcrafted ceramic pieces that blend traditional Turkish artistry with contemporary elegance. Each creation tells its own story.
+              <p className="font-inter text-base md:text-lg text-stone-600 mb-6 md:mb-8 max-w-lg mx-auto md:mx-0">
+                Discover unique handcrafted ceramic pieces that blend traditional Turkish artistry with contemporary elegance.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
                 <Link
                   href="/products"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-rose-500 to-rose-400 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-rose-500 transition-all shadow-lg hover:shadow-rose-500/25 btn-glow"
+                  className="inline-block px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-rose-500 to-rose-400 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-rose-500 transition-all shadow-lg hover:shadow-rose-500/25 btn-glow text-sm md:text-base"
                 >
                   Explore Collection
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-block px-8 py-4 border-2 border-violet-300 text-violet-600 font-inter font-semibold rounded-full hover:bg-violet-50 transition-all"
+                  className="inline-block px-6 md:px-8 py-3 md:py-4 border-2 border-violet-300 text-violet-600 font-inter font-semibold rounded-full hover:bg-violet-50 transition-all text-sm md:text-base"
                 >
                   Our Story
                 </Link>
@@ -85,14 +85,14 @@ export default function HomePage() {
             </div>
             {/* Right Side - Hero Product Image */}
             <div className="order-1 md:order-2 relative">
-              <div className="relative aspect-[3/4] max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-200/50 via-violet-200/50 to-teal-200/50 rounded-3xl transform rotate-3" />
-                <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-3xl shadow-pastel-lg" />
+              <div className="relative aspect-square md:aspect-[3/4] max-w-[280px] md:max-w-md mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-200/50 via-violet-200/50 to-teal-200/50 rounded-2xl md:rounded-3xl transform rotate-3" />
+                <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-pastel-lg" />
                 <Image
                   src="/images/wine-server/11.webp"
                   alt="Ceramic Wine Server - Handcrafted Art"
                   fill
-                  className="object-contain drop-shadow-2xl p-8"
+                  className="object-contain drop-shadow-2xl p-4 md:p-8"
                   priority
                 />
               </div>
@@ -102,39 +102,39 @@ export default function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-white/80">
+      <section className="py-10 md:py-20 bg-white/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="font-inter text-rose-500 uppercase tracking-widest text-sm mb-2 flex items-center justify-center gap-2">
-              <span className="w-8 h-0.5 bg-rose-300"></span>
+          <div className="text-center mb-8 md:mb-16">
+            <p className="font-inter text-rose-500 uppercase tracking-widest text-xs md:text-sm mb-2 flex items-center justify-center gap-2">
+              <span className="w-6 md:w-8 h-0.5 bg-rose-300"></span>
               Browse By
-              <span className="w-8 h-0.5 bg-rose-300"></span>
+              <span className="w-6 md:w-8 h-0.5 bg-rose-300"></span>
             </p>
-            <h2 className="font-playfair text-4xl font-bold text-stone-800">
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-stone-800">
               Our Collections
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
             {categories.map((category, index) => (
               <Link
                 key={category.id}
                 href={`/products?category=${category.slug}`}
-                className="group relative aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-rose-50 to-violet-50 hover:shadow-pastel-lg transition-all duration-500 border border-rose-100"
+                className="group relative aspect-square md:aspect-[3/4] rounded-xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-rose-50 to-violet-50 hover:shadow-pastel-lg transition-all duration-500 border border-rose-100"
               >
                 {categoryImages[category.slug] && (
                   <Image
                     src={categoryImages[category.slug]}
                     alt={category.name_en}
                     fill
-                    className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"
+                    className="object-contain p-2 md:p-4 group-hover:scale-110 transition-transform duration-700"
                   />
                 )}
                 <div className={`absolute inset-0 bg-gradient-to-t ${categoryGradients[category.slug] || 'from-rose-500/80 to-rose-600/80'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-stone-900/60 to-transparent group-hover:from-transparent">
-                  <h3 className="font-playfair text-xl font-semibold text-white mb-1">
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-stone-900/60 to-transparent group-hover:from-transparent">
+                  <h3 className="font-playfair text-sm md:text-xl font-semibold text-white mb-0.5 md:mb-1">
                     {category.name_en}
                   </h3>
-                  <p className="font-inter text-sm text-white/80 group-hover:text-white transition-colors flex items-center gap-2">
+                  <p className="font-inter text-xs md:text-sm text-white/80 group-hover:text-white transition-colors hidden md:flex items-center gap-2">
                     View Collection
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </p>
@@ -146,11 +146,11 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-gradient-to-br from-violet-50/50 via-white to-rose-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="font-inter text-violet-500 uppercase tracking-widest text-sm mb-2">Curated Selection</p>
-            <h2 className="font-playfair text-4xl font-bold text-stone-800">
+      <section className="py-10 md:py-20 bg-gradient-to-br from-violet-50/50 via-white to-rose-50/50">
+        <div className="max-w-7xl mx-auto px-0 md:px-6 lg:px-8">
+          <div className="text-center mb-6 md:mb-12 px-4">
+            <p className="font-inter text-violet-500 uppercase tracking-widest text-xs md:text-sm mb-2">Curated Selection</p>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-stone-800">
               Featured Pieces
             </h2>
           </div>
@@ -159,7 +159,7 @@ export default function HomePage() {
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-500 mx-auto"></div>
             </div>
           ) : featuredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0.5 md:gap-6 lg:gap-8">
               {featuredProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -169,10 +169,10 @@ export default function HomePage() {
               Check back soon for featured products!
             </p>
           )}
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12 px-4">
             <Link
               href="/products"
-              className="inline-block px-8 py-4 border-2 border-rose-400 text-rose-500 font-inter font-semibold rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300"
+              className="inline-block px-6 md:px-8 py-3 md:py-4 border-2 border-rose-400 text-rose-500 font-inter font-semibold rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300 text-sm md:text-base"
             >
               View All Products
             </Link>
