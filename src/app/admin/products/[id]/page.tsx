@@ -17,6 +17,8 @@ export default function EditProductPage() {
     name_tr: '',
     description_en: '',
     description_tr: '',
+    story_en: '',
+    story_tr: '',
     category_id: '',
     price_try: '',
     in_stock: true,
@@ -35,6 +37,8 @@ export default function EditProductPage() {
         name_tr: product.name_tr || '',
         description_en: product.description_en || '',
         description_tr: product.description_tr || '',
+        story_en: product.story_en || '',
+        story_tr: product.story_tr || '',
         category_id: product.category_id?.toString() || '',
         price_try: product.price_try?.toString() || '',
         in_stock: product.in_stock ?? true,
@@ -113,6 +117,8 @@ export default function EditProductPage() {
           description: formData.description_en,
           description_en: formData.description_en,
           description_tr: formData.description_tr,
+          story_en: formData.story_en,
+          story_tr: formData.story_tr,
           category_id: parseInt(formData.category_id),
           price_try: parseFloat(formData.price_try),
           in_stock: formData.in_stock,
@@ -201,6 +207,41 @@ export default function EditProductPage() {
               rows={3}
               className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
             />
+          </div>
+
+          <div className="border-t border-stone-200 pt-6">
+            <h3 className="font-playfair text-lg font-semibold text-stone-800 mb-4">
+              Product Story
+            </h3>
+            <p className="font-inter text-sm text-stone-500 mb-4">
+              Share the inspiration, craftsmanship, or meaning behind this piece. This helps customers connect with your work.
+            </p>
+            <div>
+              <label className="block font-inter text-sm text-stone-600 mb-1">
+                Story (English)
+              </label>
+              <textarea
+                name="story_en"
+                value={formData.story_en}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Tell the story behind this piece..."
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block font-inter text-sm text-stone-600 mb-1">
+                Story (Turkish)
+              </label>
+              <textarea
+                name="story_tr"
+                value={formData.story_tr}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Bu parcanin arkasindaki hikayeyi anlatin..."
+                className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-900"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">

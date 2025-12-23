@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} antialiased bg-stone-50`}>
+      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
         <CurrencyProvider>
           <CartProvider>
             {children}

@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fffbfc;
   --foreground: #171717;
+
+  /* Pastel Color Palette */
+  --color-rose-light: #fdf2f4;
+  --color-rose: #f43f5e;
+  --color-rose-soft: #fda4af;
+  --color-violet-light: #f5f3ff;
+  --color-violet: #8b5cf6;
+  --color-violet-soft: #c4b5fd;
+  --color-teal-light: #f0fdfa;
+  --color-teal: #14b8a6;
+  --color-teal-soft: #99f6e4;
+  --color-peach: #fed7aa;
+  --color-peach-light: #fff7ed;
 }
 
 @theme inline {
@@ -12,15 +25,51 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--color-rose-light) 0%, var(--color-violet-light) 50%, var(--color-teal-light) 100%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom utility classes for pastel theme */
+.bg-pastel-gradient {
+  background: linear-gradient(135deg, #fdf2f4 0%, #f5f3ff 50%, #f0fdfa 100%);
+}
+
+.bg-pastel-gradient-reverse {
+  background: linear-gradient(135deg, #f0fdfa 0%, #f5f3ff 50%, #fdf2f4 100%);
+}
+
+/* Soft shadows for pastel theme */
+.shadow-pastel {
+  box-shadow: 0 4px 20px -2px rgba(244, 63, 94, 0.1), 0 2px 8px -2px rgba(139, 92, 246, 0.08);
+}
+
+.shadow-pastel-lg {
+  box-shadow: 0 10px 40px -4px rgba(244, 63, 94, 0.15), 0 4px 16px -4px rgba(139, 92, 246, 0.1);
+}
+
+/* Button hover glow effects */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fda4af, #c4b5fd);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f43f5e, #8b5cf6);
 }

@@ -7,6 +7,8 @@ export interface Product {
   description: string;
   description_en: string;
   description_tr: string;
+  story_en?: string;
+  story_tr?: string;
   price_try: number;
   in_stock: boolean;
   featured: boolean;

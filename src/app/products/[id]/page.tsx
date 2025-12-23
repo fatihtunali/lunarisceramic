@@ -36,7 +36,7 @@ export default function ProductDetailPage() {
       <div className="min-h-screen flex flex-col">
         <Header />
         <div className="flex-1 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-500"></div>
         </div>
         <Footer />
       </div>
@@ -58,12 +58,12 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-stone-50 py-12">
+      <main className="flex-1 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Images */}
             <div>
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-white mb-4">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white/80 mb-4 shadow-pastel">
                 {selectedImage ? (
                   <Image
                     src={selectedImage}
@@ -83,8 +83,8 @@ export default function ProductDetailPage() {
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(img.image_url)}
-                      className={`relative aspect-square rounded overflow-hidden ${
-                        selectedImage === img.image_url ? 'ring-2 ring-amber-600' : ''
+                      className={`relative aspect-square rounded-xl overflow-hidden transition-all ${
+                        selectedImage === img.image_url ? 'ring-2 ring-rose-400 shadow-md' : 'hover:ring-2 hover:ring-rose-200'
                       }`}
                     >
                       <Image
@@ -101,10 +101,10 @@ export default function ProductDetailPage() {
 
             {/* Product Info */}
             <div>
-              <h1 className="font-playfair text-3xl font-bold text-stone-800 mb-4">
+              <h1 className="font-playfair text-3xl md:text-4xl font-bold text-stone-800 mb-4">
                 {product.name_en}
               </h1>
-              <p className="font-inter text-2xl font-semibold text-amber-600 mb-6">
+              <p className="font-inter text-2xl font-bold bg-gradient-to-r from-rose-500 to-violet-500 bg-clip-text text-transparent mb-6">
                 {format(convert(product.price_try))}
               </p>
               <div className="prose prose-stone mb-8">
@@ -114,10 +114,10 @@ export default function ProductDetailPage() {
               </div>
 
               <div className="mb-6">
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-inter ${
+                <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-inter font-medium ${
                   product.in_stock
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-red-100 text-red-800'
+                    ? 'bg-teal-100 text-teal-700'
+                    : 'bg-rose-100 text-rose-700'
                 }`}>
                   {product.in_stock ? 'In Stock' : 'Out of Stock'}
                 </span>
@@ -126,12 +126,12 @@ export default function ProductDetailPage() {
               <button
                 onClick={() => addToCart(product)}
                 disabled={!product.in_stock}
-                className="w-full md:w-auto px-8 py-4 bg-amber-600 text-white font-inter font-semibold rounded hover:bg-amber-700 transition-colors disabled:bg-stone-300 disabled:cursor-not-allowed"
+                className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-rose-500 to-rose-400 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-rose-500 transition-all shadow-lg disabled:from-stone-300 disabled:to-stone-300 disabled:cursor-not-allowed"
               >
                 Add to Cart
               </button>
 
-              <div className="mt-8 pt-8 border-t border-stone-200">
+              <div className="mt-8 pt-8 border-t border-rose-100">
                 <h3 className="font-inter font-semibold text-stone-800 mb-2">
                   Shipping Information
                 </h3>
@@ -141,6 +141,27 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </div>
+
+          {/* Product Story Section */}
+          {product.story_en && (
+            <div className="mt-16 max-w-3xl mx-auto">
+              <div className="bg-gradient-to-br from-rose-50 via-violet-50 to-teal-50 rounded-2xl p-8 md:p-12">
+                <div className="text-center mb-6">
+                  <span className="inline-block px-4 py-1 bg-white/60 rounded-full text-sm font-inter text-rose-600 mb-4">
+                    The Story Behind
+                  </span>
+                  <h2 className="font-playfair text-2xl md:text-3xl font-bold text-stone-800">
+                    Crafted with Intention
+                  </h2>
+                </div>
+                <div className="prose prose-stone max-w-none">
+                  <p className="font-inter text-stone-600 leading-relaxed text-center md:text-lg">
+                    {product.story_en}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
       <Footer />

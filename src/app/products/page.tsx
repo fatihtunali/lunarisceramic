@@ -39,18 +39,21 @@ function ProductsContent() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="font-playfair text-4xl font-bold text-stone-800 text-center mb-8">
-        Our Products
-      </h1>
+      <div className="text-center mb-12">
+        <p className="font-inter text-rose-500 uppercase tracking-widest text-sm mb-2">Discover</p>
+        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-stone-800">
+          Our Products
+        </h1>
+      </div>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-12">
         <button
           onClick={() => setSelectedCategory(null)}
-          className={`px-6 py-2 rounded-full font-inter text-sm transition-colors ${
+          className={`px-6 py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 ${
             selectedCategory === null
-              ? 'bg-amber-600 text-white'
-              : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              ? 'bg-gradient-to-r from-rose-500 to-violet-500 text-white shadow-md'
+              : 'bg-white text-stone-600 hover:bg-rose-50 border border-rose-200'
           }`}
         >
           All
@@ -59,10 +62,10 @@ function ProductsContent() {
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.slug)}
-            className={`px-6 py-2 rounded-full font-inter text-sm transition-colors ${
+            className={`px-6 py-2.5 rounded-full font-inter text-sm font-medium transition-all duration-300 ${
               selectedCategory === category.slug
-                ? 'bg-amber-600 text-white'
-                : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                ? 'bg-gradient-to-r from-rose-500 to-violet-500 text-white shadow-md'
+                : 'bg-white text-stone-600 hover:bg-rose-50 border border-rose-200'
             }`}
           >
             {category.name_en}
@@ -73,17 +76,24 @@ function ProductsContent() {
       {/* Products Grid */}
       {loading ? (
         <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-500 mx-auto"></div>
         </div>
       ) : products.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-stone-500 font-inter">No products found in this category.</p>
+          <div className="bg-white/80 rounded-2xl p-12 shadow-pastel max-w-md mx-auto">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-100 to-violet-100 flex items-center justify-center">
+              <svg className="w-8 h-8 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 12H4" />
+              </svg>
+            </div>
+            <p className="text-stone-500 font-inter">No products found in this category.</p>
+          </div>
         </div>
       )}
     </div>
@@ -94,10 +104,10 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-stone-50">
+      <main className="flex-1">
         <Suspense fallback={
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-500 mx-auto"></div>
           </div>
         }>
           <ProductsContent />

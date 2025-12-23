@@ -82,11 +82,11 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 bg-stone-50 py-12">
+        <main className="flex-1 py-12">
           <div className="max-w-2xl mx-auto px-4 text-center">
-            <div className="bg-white rounded-lg shadow-sm p-12">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white/80 rounded-3xl shadow-pastel p-12">
+              <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -96,12 +96,13 @@ export default function CheckoutPage() {
               <p className="font-inter text-stone-600 mb-2">
                 Thank you for your order. Your order number is:
               </p>
-              <p className="font-inter text-2xl font-bold text-amber-600 mb-8">
+              <p className="font-inter text-2xl font-bold bg-gradient-to-r from-rose-500 to-violet-500 bg-clip-text text-transparent mb-8">
                 {orderNumber}
               </p>
 
-              <div className="bg-amber-50 rounded-lg p-6 text-left mb-8">
-                <h3 className="font-inter font-semibold text-stone-800 mb-4">
+              <div className="bg-gradient-to-br from-rose-50 to-violet-50 rounded-2xl p-6 text-left mb-8 border border-rose-100">
+                <h3 className="font-inter font-semibold text-stone-800 mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-rose-400 rounded-full"></span>
                   Bank Transfer Details
                 </h3>
                 <div className="space-y-2 font-inter text-sm text-stone-600">
@@ -116,12 +117,12 @@ export default function CheckoutPage() {
               </div>
 
               <p className="font-inter text-stone-600 mb-6">
-                We have sent a confirmation email to <strong>{formData.email}</strong>
+                We have sent a confirmation email to <strong className="text-rose-500">{formData.email}</strong>
               </p>
 
               <button
                 onClick={() => router.push('/products')}
-                className="px-6 py-3 bg-amber-600 text-white font-inter rounded hover:bg-amber-700 transition-colors"
+                className="px-8 py-3 bg-gradient-to-r from-rose-500 to-rose-400 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-rose-500 transition-all shadow-md"
               >
                 Continue Shopping
               </button>
@@ -136,17 +137,21 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-stone-50 py-12">
+      <main className="flex-1 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-playfair text-3xl font-bold text-stone-800 mb-8">
-            Checkout
-          </h1>
+          <div className="text-center mb-8">
+            <p className="font-inter text-rose-500 uppercase tracking-widest text-sm mb-2">Almost There</p>
+            <h1 className="font-playfair text-3xl md:text-4xl font-bold text-stone-800">
+              Checkout
+            </h1>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Form */}
             <div className="md:col-span-2">
-              <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-6">
-                <h2 className="font-inter font-semibold text-stone-800 mb-6">
+              <form onSubmit={handleSubmit} className="bg-white/80 rounded-2xl shadow-pastel p-6">
+                <h2 className="font-inter font-semibold text-stone-800 mb-6 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-rose-400 rounded-full"></span>
                   Shipping Information
                 </h2>
 
@@ -161,7 +166,7 @@ export default function CheckoutPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                     />
                   </div>
 
@@ -176,7 +181,7 @@ export default function CheckoutPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
                     <div>
@@ -188,7 +193,7 @@ export default function CheckoutPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
                   </div>
@@ -203,7 +208,7 @@ export default function CheckoutPage() {
                       onChange={handleChange}
                       required
                       rows={3}
-                      className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                     />
                   </div>
 
@@ -218,7 +223,7 @@ export default function CheckoutPage() {
                         value={formData.city}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
                     <div>
@@ -230,7 +235,7 @@ export default function CheckoutPage() {
                         value={formData.country}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       >
                         <option value="">Select country</option>
                         <option value="Turkey">Turkey</option>
@@ -254,21 +259,24 @@ export default function CheckoutPage() {
                       onChange={handleChange}
                       rows={2}
                       placeholder="Any special instructions..."
-                      className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-stone-100">
-                  <h2 className="font-inter font-semibold text-stone-800 mb-4">
+                <div className="mt-8 pt-6 border-t border-rose-100">
+                  <h2 className="font-inter font-semibold text-stone-800 mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full"></span>
                     Payment Method
                   </h2>
-                  <div className="bg-amber-50 rounded-lg p-4">
+                  <div className="bg-gradient-to-br from-violet-50 to-rose-50 rounded-xl p-4 border border-violet-100">
                     <div className="flex items-center gap-3">
-                      <input type="radio" checked readOnly className="text-amber-600" />
-                      <span className="font-inter text-stone-800">Bank Transfer</span>
+                      <div className="w-5 h-5 rounded-full border-2 border-violet-500 flex items-center justify-center">
+                        <div className="w-2.5 h-2.5 rounded-full bg-violet-500"></div>
+                      </div>
+                      <span className="font-inter text-stone-800 font-medium">Bank Transfer</span>
                     </div>
-                    <p className="mt-2 text-sm text-stone-600 font-inter">
+                    <p className="mt-2 text-sm text-stone-600 font-inter ml-8">
                       You will receive bank details after placing your order.
                     </p>
                   </div>
@@ -277,7 +285,7 @@ export default function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-8 w-full px-6 py-4 bg-amber-600 text-white font-inter font-semibold rounded hover:bg-amber-700 transition-colors disabled:bg-stone-300"
+                  className="mt-8 w-full px-6 py-4 bg-gradient-to-r from-rose-500 to-violet-500 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-violet-600 transition-all shadow-md disabled:from-stone-300 disabled:to-stone-300"
                 >
                   {loading ? 'Processing...' : 'Place Order'}
                 </button>
@@ -286,8 +294,9 @@ export default function CheckoutPage() {
 
             {/* Order Summary */}
             <div>
-              <div className="bg-white rounded-lg shadow-sm p-6 sticky top-24">
-                <h2 className="font-inter font-semibold text-stone-800 mb-4">
+              <div className="bg-white/80 rounded-2xl shadow-pastel p-6 sticky top-24">
+                <h2 className="font-inter font-semibold text-stone-800 mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-teal-400 rounded-full"></span>
                   Order Summary
                 </h2>
                 <div className="space-y-3">
@@ -296,15 +305,15 @@ export default function CheckoutPage() {
                       <span className="text-stone-600">
                         {item.product.name_en} x {item.quantity}
                       </span>
-                      <span className="text-stone-800">
+                      <span className="text-stone-800 font-medium">
                         {format(convert(item.product.price_try * item.quantity))}
                       </span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-stone-100 flex justify-between">
+                <div className="mt-4 pt-4 border-t border-rose-100 flex justify-between items-center">
                   <span className="font-inter font-semibold text-stone-800">Total</span>
-                  <span className="font-playfair text-xl font-bold text-amber-600">
+                  <span className="font-playfair text-xl font-bold bg-gradient-to-r from-rose-500 to-violet-500 bg-clip-text text-transparent">
                     {format(convert(totalPriceTRY))}
                   </span>
                 </div>

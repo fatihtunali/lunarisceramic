@@ -49,6 +49,8 @@ export async function PUT(
       description,
       description_en,
       description_tr,
+      story_en = '',
+      story_tr = '',
       price_try,
       in_stock,
       featured,
@@ -59,9 +61,10 @@ export async function PUT(
       `UPDATE products SET
        category_id = ?, name = ?, name_en = ?, name_tr = ?,
        description = ?, description_en = ?, description_tr = ?,
+       story_en = ?, story_tr = ?,
        price_try = ?, in_stock = ?, featured = ?
        WHERE id = ?`,
-      [category_id, name, name_en, name_tr, description, description_en, description_tr, price_try, in_stock, featured, id]
+      [category_id, name, name_en, name_tr, description, description_en, description_tr, story_en, story_tr, price_try, in_stock, featured, id]
     );
 
     // Update images if provided

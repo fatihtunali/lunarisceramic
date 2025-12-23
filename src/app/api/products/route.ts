@@ -56,6 +56,8 @@ export async function POST(request: NextRequest) {
       description,
       description_en,
       description_tr,
+      story_en = '',
+      story_tr = '',
       price_try,
       in_stock = true,
       featured = false,
@@ -64,9 +66,9 @@ export async function POST(request: NextRequest) {
 
     const result = await query<{ insertId: number }>(
       `INSERT INTO products
-       (category_id, name, name_en, name_tr, description, description_en, description_tr, price_try, in_stock, featured)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [category_id, name, name_en, name_tr, description, description_en, description_tr, price_try, in_stock, featured]
+       (category_id, name, name_en, name_tr, description, description_en, description_tr, story_en, story_tr, price_try, in_stock, featured)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [category_id, name, name_en, name_tr, description, description_en, description_tr, story_en, story_tr, price_try, in_stock, featured]
     );
 
     const productId = (result as unknown as { insertId: number }).insertId;

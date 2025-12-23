@@ -26,19 +26,22 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-stone-50 py-16">
+      <main className="flex-1 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-playfair text-4xl font-bold text-stone-800 text-center mb-8">
-            Contact Us
-          </h1>
+          <div className="text-center mb-12">
+            <p className="font-inter text-violet-500 uppercase tracking-widest text-sm mb-2">Get in Touch</p>
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-stone-800">
+              Contact Us
+            </h1>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-sm p-8">
+            <div className="bg-white/80 rounded-3xl shadow-pastel p-8 border border-rose-100">
               {submitted ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -51,7 +54,8 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <h2 className="font-inter font-semibold text-stone-800 mb-6">
+                  <h2 className="font-inter font-semibold text-stone-800 mb-6 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-rose-400 rounded-full"></span>
                     Send us a message
                   </h2>
 
@@ -66,7 +70,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
 
@@ -80,7 +84,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
 
@@ -92,7 +96,7 @@ export default function ContactPage() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       >
                         <option value="">Select a subject</option>
                         <option value="order">Order Inquiry</option>
@@ -112,14 +116,14 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-2 border border-stone-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full px-4 py-3 border border-rose-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-300 bg-white/80 transition-all"
                       />
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="mt-6 w-full py-3 bg-amber-600 text-white font-inter font-semibold rounded hover:bg-amber-700 transition-colors"
+                    className="mt-6 w-full py-4 bg-gradient-to-r from-rose-500 to-violet-500 text-white font-inter font-semibold rounded-full hover:from-rose-600 hover:to-violet-600 transition-all shadow-md"
                   >
                     Send Message
                   </button>
@@ -129,26 +133,31 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-sm p-8">
-                <h2 className="font-inter font-semibold text-stone-800 mb-4">
+              <div className="bg-white/80 rounded-3xl shadow-pastel p-8 border border-violet-100">
+                <h2 className="font-inter font-semibold text-stone-800 mb-6 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-violet-400 rounded-full"></span>
                   Get in Touch
                 </h2>
-                <div className="space-y-4 font-inter text-stone-600">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                <div className="space-y-5 font-inter text-stone-600">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
                     <div>
                       <p className="font-semibold text-stone-800">Email</p>
-                      <p>info@lunarisceramic.com</p>
+                      <p className="text-rose-500">info@lunarisceramic.com</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-100 to-violet-200 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
                     <div>
                       <p className="font-semibold text-stone-800">Location</p>
                       <p>Turkey</p>
@@ -157,10 +166,17 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-amber-50 rounded-lg p-8">
-                <h3 className="font-inter font-semibold text-stone-800 mb-2">
-                  Custom Orders
-                </h3>
+              <div className="bg-gradient-to-br from-teal-50 to-violet-50 rounded-3xl p-8 border border-teal-100">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-inter font-semibold text-stone-800">
+                    Custom Orders
+                  </h3>
+                </div>
                 <p className="font-inter text-sm text-stone-600">
                   Looking for something unique? We accept custom orders for special occasions,
                   gifts, or specific requirements. Contact us to discuss your ideas!
