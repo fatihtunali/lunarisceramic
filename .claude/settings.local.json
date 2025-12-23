@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(ssh root@142.93.136.228:*)",
+      "Bash(git add:*)"
     ]
   }
 }

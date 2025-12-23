@@ -86,3 +86,19 @@ export interface AdminUser {
   role: 'admin' | 'editor';
   last_login: string | null;
 }
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title_en: string;
+  title_tr: string;
+  excerpt_en: string;
+  excerpt_tr: string;
+  content_en: string;
+  content_tr: string;
+  cover_image: string;
+  category: 'production' | 'behind-scenes' | 'care-tips';
+  published: boolean;
+  created_at: string;
+  updated_at: string;
+}

@@ -34,10 +34,13 @@ export default function Header() {
             <Link href="/products" className="text-stone-600 hover:text-rose-500 font-inter font-medium transition-colors">
               Products
             </Link>
-            <Link href="/about" className="text-stone-600 hover:text-violet-500 font-inter font-medium transition-colors">
+            <Link href="/blog" className="text-stone-600 hover:text-violet-500 font-inter font-medium transition-colors">
+              Blog
+            </Link>
+            <Link href="/about" className="text-stone-600 hover:text-teal-500 font-inter font-medium transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-stone-600 hover:text-teal-500 font-inter font-medium transition-colors">
+            <Link href="/contact" className="text-stone-600 hover:text-rose-500 font-inter font-medium transition-colors">
               Contact
             </Link>
           </div>
@@ -86,10 +89,13 @@ export default function Header() {
             <Link href="/products" className="block py-2 text-stone-600 hover:text-rose-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
               Products
             </Link>
-            <Link href="/about" className="block py-2 text-stone-600 hover:text-violet-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
+            <Link href="/blog" className="block py-2 text-stone-600 hover:text-violet-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
+              Blog
+            </Link>
+            <Link href="/about" className="block py-2 text-stone-600 hover:text-teal-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
               About
             </Link>
-            <Link href="/contact" className="block py-2 text-stone-600 hover:text-teal-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
+            <Link href="/contact" className="block py-2 text-stone-600 hover:text-rose-500 font-inter transition-colors" onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
           </div>

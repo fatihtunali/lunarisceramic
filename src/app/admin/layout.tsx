@@ -77,6 +77,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   Orders
                 </Link>
                 <Link
+                  href="/admin/blog"
+                  className={`font-inter text-sm ${pathname.startsWith('/admin/blog') ? 'text-amber-600' : 'text-stone-600 hover:text-stone-800'}`}
+                >
+                  Blog
+                </Link>
+                <Link
                   href="/admin/settings"
                   className={`font-inter text-sm ${pathname === '/admin/settings' ? 'text-amber-600' : 'text-stone-600 hover:text-stone-800'}`}
                 >
