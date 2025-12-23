@@ -14,36 +14,36 @@ export default function Header() {
   return (
     <header className="bg-white/80 backdrop-blur-md shadow-pastel sticky top-0 z-50 border-b border-rose-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="/logo/logo.png"
               alt="Lunaris Ceramic"
-              width={48}
-              height={48}
+              width={40}
+              height={40}
               className="rounded-full ring-2 ring-rose-100 group-hover:ring-rose-300 transition-all"
             />
-            <span className="font-playfair text-xl font-bold bg-gradient-to-r from-rose-500 via-violet-500 to-teal-500 bg-clip-text text-transparent hidden sm:block">
+            <span className="font-playfair text-lg font-bold bg-gradient-to-r from-rose-500 via-violet-500 to-teal-500 bg-clip-text text-transparent hidden sm:block">
               Lunaris Ceramic
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/products" className="text-stone-600 hover:text-rose-500 font-inter transition-colors">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-10">
+            <Link href="/products" className="text-stone-600 hover:text-rose-500 font-inter font-medium transition-colors">
               Products
             </Link>
-            <Link href="/about" className="text-stone-600 hover:text-violet-500 font-inter transition-colors">
+            <Link href="/about" className="text-stone-600 hover:text-violet-500 font-inter font-medium transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-stone-600 hover:text-teal-500 font-inter transition-colors">
+            <Link href="/contact" className="text-stone-600 hover:text-teal-500 font-inter font-medium transition-colors">
               Contact
             </Link>
           </div>
 
           {/* Currency & Cart */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value as 'TRY' | 'EUR' | 'USD')}
