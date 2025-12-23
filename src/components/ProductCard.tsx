@@ -34,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
           )}
-          {product.featured === 1 && (
+          {Boolean(product.featured) && (
             <div className="absolute top-3 left-3">
               <span className="px-3 py-1 bg-gradient-to-r from-rose-500 to-violet-500 text-white text-xs font-inter font-semibold rounded-full">
                 Featured
