@@ -20,7 +20,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group bg-white rounded-2xl shadow-pastel overflow-hidden hover:shadow-pastel-lg transition-all duration-300 border border-rose-100/50">
       <Link href={`/products/${product.id}`}>
-        <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-rose-50 to-violet-50">
+        <div className="relative aspect-[3/4] overflow-hidden bg-white">
           <Image
             src={imageUrl}
             alt={product.name_en}
