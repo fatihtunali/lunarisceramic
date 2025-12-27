@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run build:*)",
       "Bash(ssh root@142.93.136.228:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd blog system with admin panel and public pages\n\n- Blog database table with multilingual support \\(EN/TR\\)\n- API routes for CRUD operations \\(/api/blog\\)\n- Admin pages for managing blog posts\n- Public blog listing and single post pages\n- Three categories: Production Process, Behind the Scenes, Care & Tips\n- Blog link added to header navigation\n- Three sample blog posts added\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
     ]
   }
 }

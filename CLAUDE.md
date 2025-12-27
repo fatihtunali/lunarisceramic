@@ -32,17 +32,14 @@ src/
 │   │   ├── categories/    # Category listing
 │   │   ├── auth/          # Login/logout/session
 │   │   ├── upload/        # Image uploads
-│   │   └── exchange-rates/ # Currency conversion rates
-│   ├── admin/             # Protected admin panel
-│   └── (public pages)     # products, cart, checkout, about, contact
+│   │   └── blog/          # Blog posts CRUD
+│   ├── admin/             # Protected admin panel (products, orders, blog, settings)
+│   ├── blog/              # Public blog pages
+│   └── (public pages)     # products, about, contact
 ├── components/            # Shared React components (Header, Footer, ProductCard)
-├── context/               # React Context providers
-│   ├── CartContext.tsx    # Shopping cart state (localStorage-persisted)
-│   └── CurrencyContext.tsx # Currency selection (TRY/EUR/USD)
 ├── lib/                   # Utilities
 │   ├── db.ts             # MySQL connection pool and query helper
-│   ├── auth.ts           # JWT/session management
-│   └── currency.ts       # Currency formatting
+│   └── auth.ts           # JWT/session management
 └── types/                 # TypeScript interfaces (Product, Order, Category, etc.)
 ```
 
@@ -50,13 +47,14 @@ src/
 
 - **API Routes**: All at `/api/*`, use the `query()` helper from `@/lib/db` for database access
 - **Admin Auth**: Protected via client-side check in `admin/layout.tsx` that calls `/api/auth/me`
-- **Prices**: Stored in TRY (Turkish Lira) in database, converted client-side via CurrencyContext
+- **No Online Sales**: Prices are not displayed; customers contact via WhatsApp for pricing (offline sales only)
+- **WhatsApp Contact**: Product pages have "Contact for Price" buttons linking to `wa.me/905366063251` with pre-filled product info
 - **Multilingual**: Products have `name_en`/`name_tr` and `description_en`/`description_tr` fields
 - **Path Alias**: `@/*` maps to `./src/*`
 
 ### Database Tables
 
-Core tables: `products`, `product_images`, `categories`, `orders`, `order_items`, `admin_users`, `exchange_rates`
+Core tables: `products`, `product_images`, `categories`, `orders`, `order_items`, `admin_users`, `blog_posts`
 
 ### Environment Variables
 
